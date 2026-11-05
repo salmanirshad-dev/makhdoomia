@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Makhdoomia Model High School — Warpora, Sopore</title>
+<meta name="description" content="Makhdoomia Model High School (MMHS), Warpora, Dangarpora, Sopore, Baramulla. A community-rooted high school serving the Warpora area of North Kashmir." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   TOKENS — GASEOUS NEON GREEN
+   ============================================================ */
+:root{
+  --ink: #ffffff;
+  --ink-2: #f4fbf7;
+  --panel: #ffffff;
+  --panel-2: #e8f8ee;
+  
+  --neon: #00e676;
+  --neon-light: #69f0ae;
+  --neon-2: #00bcd4;
+  --neon-deep: #006644;
+  --neon-gradient: linear-gradient(135deg, #00e676, #00bcd4);
+  
+  --text-main: #0b1a11;
+  --muted: #4a5e52;
+  --muted-dark: #64748b;
+  
+  --line: rgba(0, 230, 118, 0.2);
+  --line-dark: rgba(0, 0, 0, 0.06);
+  --glow: 0 10px 30px rgba(0, 230, 118, 0.3);
+  --glow-lg: 0 20px 50px rgba(0, 230, 118, 0.4);
+  --shadow: 0 20px 40px -20px rgba(0,0,0,0.08);
+
+  --font-display:'Bricolage Grotesque', system-ui, sans-serif;
+  --font-serif:'Instrument Serif', Georgia, serif;
+  --font-sans:'Inter Tight', system-ui, -apple-system, sans-serif;
+
+  --r-sm:14px;
+  --r:22px;
+  --r-lg:32px;
+  --r-xl:44px;
+
+  --ease:cubic-bezier(.22,.9,.28,1);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:110px;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.65;
+  color:var(--text-main);
+  background:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  text-rendering: optimizeLegibility;
+}
+img,svg{display:block;max-width:100%;}
+
+/* Shared page container: keeps desktop content centered and inside the viewport. */
+.wrap{
+  width:min(1240px, 92%);
+  max-width:100%;
+  margin-inline:auto;
+  min-width:0;
+}
+.hero__grid,
+.bento,
+.gal,
+.events,
+.depts,
+.contact-grid,
+.footer__top,
+.sec-head,
+.subj{
+  min-width:0;
+}
+.hero__copy,
+.hero__visual,
+.sec-head__l,
+.bx,
+.gal__side,
+.contact-grid > *,
+.footer__top > *{
+  min-width:0;
+}
+p, h1, h2, h3, h4, .hero__meta b, .brand__txt strong{
+  overflow-wrap:break-word;
+}
+a{color:inherit;text-decoration:none;}
+ul{margin:0;padding:0;list-style:none;}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+::selection{background:var(--neon);color:#000;}
+
+/* ============================================================
+   TYPE & ALIGNMENT FIXES
+   ============================================================ */
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  font-weight:600;
+  line-height:1.1;
+  letter-spacing:-.035em;
+  margin:0;
+  color:var(--text-main);
+  text-align: left;
+}
+.h-xl{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:700; line-height:1.05;}
+.h-lg{font-size:clamp(2rem,4.5vw,3.5rem);}
+.h-md{font-size:clamp(1.4rem,2.4vw,2rem);}
+.h-sm{font-size:clamp(1.1rem,1.5vw,1.3rem);}
+
+.serif{
+  font-family:var(--font-serif);
+  font-style:italic;
+  font-weight:400;
+  background: var(--neon-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+p{margin:0;color:var(--muted);text-align: left;}
+
+.kicker{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--neon);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  --bg:var(--neon-gradient);
+  --fg:#000000;
+  position:relative;
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:.65rem;
+  padding:1rem 1.8rem;
+  border-radius:999px;
+  background:var(--bg);
+  color:var(--fg);
+  font-size:.88rem;font-weight:700;
+  overflow:hidden;
+  isolation:isolate;
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+  white-space:nowrap;
+  box-shadow: 0 4px 15px rgba(0, 230, 118, 0.25);
+  text-align: center;
+}
+.btn span{position:relative;z-index:2;display:inline-flex;align-items:center;gap:.6rem;}
+.btn::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg, #00bcd4, #00e676);
+  transform:translateY(101%);
+  transition:transform .55s var(--ease);
+}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--glow-lg);}
+.btn:hover::before{transform:translateY(0);}
+.btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s var(--ease);}
+.btn:hover svg{transform:translate(3px,-3px);}
+
+.btn--ghost{
+  --bg:transparent;--fg:var(--neon-deep);
+  border:1px solid var(--neon);
+  box-shadow:none;
+}
+.btn--ghost::before{background:rgba(0,230,118,0.1);}
+.btn--ghost:hover{box-shadow:var(--glow);border-color:var(--neon-2);color:var(--text-main);}
+
+.btn--sm{padding:.65rem 1.3rem;font-size:.8rem;}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1rem 0;
+  transition:padding .4s var(--ease);
+}
+.nav-shell{
+  width:min(1240px,92%);
+  margin-inline:auto;
+  display:flex;align-items:center;gap:1rem;
+  padding:.5rem .5rem .5rem 1.25rem;
+  border-radius:999px;
+  border:1px solid var(--line-dark);
+  background:rgba(255, 255, 255, 0.85);
+  backdrop-filter:blur(22px) saturate(160%);
+  -webkit-backdrop-filter:blur(22px) saturate(160%);
+  transition:background .4s ease, border-color .4s ease, box-shadow .4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+.site-header.is-scrolled .nav-shell{
+  background:rgba(255, 255, 255, 0.95);
+  border-color:rgba(0, 230, 118, 0.4);
+  box-shadow:0 10px 40px -10px rgba(0,0,0,0.08);
+}
+
+.brand{display:flex;align-items:center;gap:.75rem;margin-right:auto;}
+.brand__mark{
+  width:44px;height:44px;flex-shrink:0;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  border:2px solid var(--neon);
+  transition:transform .6s var(--ease), box-shadow .6s var(--ease);
+  background:#fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.brand__mark img{
+  width:100%;height:100%;object-fit:contain; padding: 2px;
+}
+.brand:hover .brand__mark{transform:scale(1.05);box-shadow:0 4px 15px rgba(0,230,118,0.5);}
+.brand__txt{display:flex;flex-direction:column;line-height:1.15;}
+.brand__txt strong{
+  font-family:var(--font-display);
+  font-size:1rem;font-weight:700;letter-spacing:-.02em;color:var(--text-main);
+}
+.brand__txt small{
+  font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--neon);font-weight:600;
+}
+
+.nav{display:flex;align-items:center;gap:.2rem;}
+.nav a{
+  padding:.55rem .95rem;
+  border-radius:999px;
+  font-size:.84rem;font-weight:600;
+  color:var(--muted);
+  transition:color .3s ease, background .3s ease;
+}
+.nav a:hover{color:var(--neon);background:rgba(0,230,118,.1);}
+
+.burger{
+  display:none;
+  width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line-dark);
+  position:relative;flex-shrink:0;
+}
+.burger span{
+  position:absolute;left:13px;width:18px;height:1.6px;border-radius:2px;background:var(--text-main);
+  transition:transform .4s var(--ease), opacity .25s ease, top .4s var(--ease);
+}
+.burger span:nth-child(1){top:16px;}
+.burger span:nth-child(2){top:21.2px;}
+.burger span:nth-child(3){top:26.4px;}
+.burger.is-open span:nth-child(1){top:21.2px;transform:rotate(45deg);}
+.burger.is-open span:nth-child(2){opacity:0;}
+.burger.is-open span:nth-child(3){top:21.2px;transform:rotate(-45deg);}
+
+/* mobile drawer */
+.drawer{
+  position:fixed;inset:0;z-index:99;
+  background:rgba(255, 255, 255, 0.98);
+  backdrop-filter:blur(20px);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:6rem 8% 4rem;
+  opacity:0;visibility:hidden;
+  transition:opacity .45s ease, visibility .45s;
+}
+.drawer.is-open{opacity:1;visibility:visible;}
+.drawer ul{display:grid;gap:.2rem;}
+.drawer a{
+  display:block;
+  font-family:var(--font-display);
+  font-size:clamp(1.8rem,7vw,2.6rem);
+  font-weight:600;letter-spacing:-.03em;
+  color:var(--text-main);padding:.45rem 0;
+  border-bottom:1px solid var(--line-dark);
+  opacity:0;transform:translateY(18px);
+  transition:opacity .5s ease, transform .5s var(--ease), color .3s;
+}
+.drawer.is-open a{opacity:1;transform:none;}
+.drawer a:hover{color:var(--neon);}
+.drawer.is-open a:nth-child(1){transition-delay:.08s;}
+.drawer.is-open a:nth-child(2){transition-delay:.14s;}
+.drawer.is-open a:nth-child(3){transition-delay:.2s;}
+.drawer.is-open a:nth-child(4){transition-delay:.26s;}
+.drawer.is-open a:nth-child(5){transition-delay:.32s;}
+.drawer.is-open a:nth-child(6){transition-delay:.38s;}
+
+/* ============================================================
+   HERO — GASEOUS GRADIENT
+   ============================================================ */
+.hero{
+  position:relative;
+  background:var(--ink);
+  padding:clamp(120px,15vw,180px) 0 clamp(60px,8vw,100px);
+  overflow:hidden;
+  isolation:isolate;
+}
+.orb{
+  position:absolute;border-radius:50%;filter:blur(140px);pointer-events:none;z-index:0;
+  will-change:transform;
+}
+.orb--1{
+  width:min(800px,90vw);aspect-ratio:1;
+  top:-30%;right:-15%;
+  background:radial-gradient(circle at 40% 40%, rgba(0,230,118,.45), rgba(0,230,118,0) 70%);
+  animation:drift1 25s ease-in-out infinite;
+}
+.orb--2{
+  width:min(700px,80vw);aspect-ratio:1;
+  bottom:-40%;left:-20%;
+  background:radial-gradient(circle at 50% 50%, rgba(0,188,212,.35), rgba(0,188,212,0) 70%);
+  animation:drift2 30s ease-in-out infinite;
+}
+.orb--3{
+  width:min(500px,60vw);aspect-ratio:1;
+  top:40%;left:40%;
+  background:radial-gradient(circle at 50% 50%, rgba(105,240,174,.25), rgba(105,240,174,0) 70%);
+  animation:drift1 35s ease-in-out infinite reverse;
+}
+@keyframes drift1{
+  0%,100%{transform:translate(0,0) scale(1);}
+  50%{transform:translate(-60px,70px) scale(1.15);}
+}
+@keyframes drift2{
+  0%,100%{transform:translate(0,0) scale(1);}
+  50%{transform:translate(70px,-60px) scale(1.1);}
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(0,0,0,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 80%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 80%);
+}
+
+.hero__grid{
+  position:relative;z-index:2;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:clamp(2rem,5vw,4rem);
+  align-items:center;
+}
+.hero__badge{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.4rem .9rem .4rem .5rem;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(0,230,118,.08);
+  font-size:.72rem;letter-spacing:.06em;font-weight:600;
+  color:var(--neon-deep);
+  margin-bottom:1.5rem;
+  backdrop-filter:blur(10px);
+}
+.hero__badge b{
+  display:inline-flex;align-items:center;
+  background:var(--neon-gradient);color:#000;
+  padding:.2rem .6rem;border-radius:999px;
+  font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;
+}
+.hero h1{
+  margin-bottom:1.5rem;
+}
+.hero__lead{
+  font-size:clamp(1rem,1.25vw,1.1rem);
+  color:var(--muted);
+  max-width:50ch;
+  line-height:1.75;
+  margin-bottom:2rem;
+}
+.hero__actions{display:flex;flex-wrap:wrap;gap:.75rem;}
+
+.hero__meta{
+  display:flex;flex-wrap:wrap;gap:0;
+  margin-top:2.5rem;
+  border-top:1px solid var(--line-dark);
+}
+.hero__meta div{
+  padding:1.2rem 1.8rem 0 0;
+  margin-right:1.8rem;
+  border-right:1px solid var(--line-dark);
+}
+.hero__meta div:last-child{border-right:none;margin-right:0;padding-right:0;}
+.hero__meta b{
+  display:block;
+  font-family:var(--font-display);
+  font-size:1rem;font-weight:700;color:var(--text-main);
+  margin-bottom:.1rem;
+}
+.hero__meta span{
+  font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--neon);font-weight:600;
+}
+
+/* HERO VISUAL */
+.hero__visual{position:relative;display:flex;justify-content:center;align-items:center; min-height: 400px;}
+.hero__logo-wrap{
+  position:relative;
+  width:100%;
+  max-width:380px;
+  aspect-ratio:1;
+  border-radius:50%;
+  padding:15px;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--line);
+  box-shadow:var(--glow-lg);
+  animation:floaty 8s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero__logo-wrap img{
+  width:100%;height:100%;object-fit:contain;
+  border-radius:50%;
+  background:#fff;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+  padding: 10px;
+}
+@keyframes floaty{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+.hero__float{
+  position:absolute;
+  bottom:0;right:0;
+  z-index:3;
+  background:rgba(255, 255, 255, 0.95);
+  border:1px solid var(--line);
+  backdrop-filter:blur(20px);
+  border-radius:var(--r);
+  padding:1rem 1.2rem;
+  box-shadow:var(--shadow);
+  text-align: left;
+}
+.hero__float small{
+  display:block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--neon);font-weight:700;margin-bottom:.2rem;
+}
+.hero__float b{
+  font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--text-main);
+}
+
+/* ============================================================
+   TICKER
+   ============================================================ */
+.ticker{
+  background:var(--neon-gradient);
+  color:#000;
+  padding:.95rem 0;
+  overflow:hidden;
+}
+.ticker__track{
+  display:flex;width:max-content;
+  animation:marquee 34s linear infinite;
+}
+.ticker:hover .ticker__track{animation-play-state:paused;}
+.ticker__group{
+  display:flex;align-items:center;gap:2.6rem;padding-right:2.6rem;
+  flex-shrink:0;
+}
+.ticker__group span{
+  font-family:var(--font-display);
+  font-size:.86rem;font-weight:700;letter-spacing:.02em;
+  white-space:nowrap;text-transform:uppercase;
+}
+.ticker__group i{
+  font-style:normal;font-size:.72rem;opacity:.7;
+}
+@keyframes marquee{to{transform:translateX(-50%);}}
+
+/* ============================================================
+   SECTION BASICS & ALIGNMENT
+   ============================================================ */
+.section{padding:clamp(60px,8vw,120px) 0;position:relative;}
+.section--dark{background:var(--ink);}
+.section--darker{background:var(--ink-2);}
+.section--panel{background:var(--panel-2);}
+
+.sec-head{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;
+  margin-bottom:clamp(2rem,4vw,3.5rem);
+  flex-wrap:wrap;
+}
+.sec-head__l{max-width:640px;}
+.sec-head h2{margin-top:.8rem;}
+.sec-head p{color:var(--muted);margin-top:1rem;max-width:55ch; line-height: 1.7;}
+.sec-head__num{
+  font-family:var(--font-display);
+  font-size:.72rem;font-weight:700;letter-spacing:.18em;
+  color:var(--neon);
+  padding-bottom:.5rem;
+}
+
+/* ============================================================
+   BENTO / ABOUT
+   ============================================================ */
+.bento{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:16px;
+}
+.bx{
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  position:relative;
+  transition:transform .55s var(--ease), box-shadow .55s var(--ease);
+  background:var(--panel);
+  border:1px solid var(--line-dark);
+  text-align: left;
+}
+.bx:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+  border-color:rgba(0,230,118,0.4);
+}
+
+.bx--photo{
+  grid-column:span 3;grid-row:span 2;
+  min-height:420px;
+}
+.bx--photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 1.3s var(--ease);}
+.bx--photo:hover img{transform:scale(1.06);}
+.bx--photo::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85));
+}
+.bx--photo figcaption{
+  position:absolute;left:1.5rem;right:1.5rem;bottom:1.5rem;z-index:2;color:#fff;
+}
+.bx--photo figcaption b{
+  display:block;font-family:var(--font-display);font-size:1.15rem;font-weight:600;
+  margin-bottom:.3rem;
+}
+.bx--photo figcaption span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--neon-light);font-weight:700;}
+
+.bx--head{
+  grid-column:span 3;
+  padding:clamp(1.8rem,3vw,2.5rem);
+  display:flex;flex-direction:column;justify-content:center;
+  background: linear-gradient(135deg, rgba(0,230,118,0.05), transparent);
+}
+.bx--head h2{font-size:clamp(1.5rem,2.5vw,2.2rem); margin-bottom: 1rem;}
+.bx--head p{font-size:.95rem; line-height: 1.8;}
+
+.bx--stat{
+  grid-column:span 1;
+  padding:1.5rem 1.2rem;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:150px;
+}
+.bx--stat b{
+  font-family:var(--font-display);
+  font-size:clamp(1.4rem,2.4vw,1.8rem);
+  font-weight:700;color:var(--text-main);line-height:1.1;
+}
+.bx--stat span{
+  font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--neon);font-weight:600;margin-top:.5rem;
+}
+.bx--stat:hover{background:rgba(0,230,118,0.08);}
+
+/* ============================================================
+   ACADEMICS LIST
+   ============================================================ */
+.subjects{border-top:1px solid var(--line-dark);}
+.subj{
+  position:relative;
+  display:grid;
+  grid-template-columns:60px 1fr 1fr 44px;
+  align-items:center; /* Fix vertical alignment */
+  gap:1.5rem;
+  padding:clamp(1.5rem,2.5vw,2rem) 0;
+  border-bottom:1px solid var(--line-dark);
+  transition:padding-left .5s var(--ease);
+}
+.subj::before{
+  content:"";position:absolute;inset:0 -24px;z-index:-1;
+  background:linear-gradient(90deg,rgba(0,230,118,.08),transparent);
+  border-radius:var(--r);
+  opacity:0;
+  transition:opacity .45s ease;
+}
+.subj:hover::before{opacity:1;}
+.subj:hover{padding-left:1rem;}
+.subj__num{
+  font-family:var(--font-display);
+  font-size:.78rem;font-weight:700;letter-spacing:.15em;
+  color:var(--neon);
+}
+.subj h3{
+  font-size:clamp(1.3rem,2.2vw,1.75rem);
+  color:var(--text-main);
+  transition:color .4s ease;
+}
+.subj:hover h3{color:var(--neon);}
+.subj p{
+  color:var(--muted);
+  font-size:.92rem;
+  line-height:1.6;
+  max-width:45ch;
+}
+.subj__arrow{
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--line-dark);
+  display:flex;justify-content:center;align-items:center;
+  transition:background .4s ease, border-color .4s ease, transform .4s var(--ease);
+}
+.subj__arrow svg{width:14px;height:14px;stroke:var(--text-main);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:stroke .4s;}
+.subj:hover .subj__arrow{background:var(--neon-gradient);border-color:var(--neon);transform:rotate(45deg);box-shadow:var(--glow);}
+.subj:hover .subj__arrow svg{stroke:#000;}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gal{
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  gap:clamp(1.5rem,3vw,2.5rem);
+  align-items:stretch;
+}
+.gal__fig{
+  position:relative;
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  min-height:clamp(340px,50vw,540px);
+  border:1px solid var(--line-dark);
+  box-shadow:var(--shadow);
+}
+.gal__fig img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 1.4s var(--ease);}
+.gal__fig:hover img{transform:scale(1.05);}
+.gal__fig::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85));
+}
+.gal__cap{
+  position:absolute;left:clamp(1.5rem,3vw,2.5rem);right:clamp(1.5rem,3vw,2.5rem);
+  bottom:clamp(1.5rem,3vw,2.5rem);z-index:2;color:#fff;
+  text-align: left;
+}
+.gal__cap b{
+  display:block;font-family:var(--font-display);
+  font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;
+  margin-bottom:.3rem;
+}
+.gal__cap span{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--neon-light);font-weight:700;}
+
+.gal__side{
+  display:flex;flex-direction:column;justify-content:center;gap:1.2rem;
+  padding:clamp(1.8rem,3vw,2.5rem);
+  border-radius:var(--r-xl);
+  background:var(--panel);
+  border:1px solid var(--line-dark);
+  text-align: left;
+}
+.gal__side h3{font-size:clamp(1.3rem,2.2vw,1.8rem); margin-bottom: 0.5rem;}
+.gal__side p{font-size:.95rem; line-height: 1.7;}
+.gal__credit{
+  font-size:.78rem;color:var(--muted);
+  border-top:1px solid var(--line-dark);
+  padding-top:1.2rem;line-height:1.6; margin-top: 0.5rem;
+}
+.gal__credit a{
+  color:var(--neon-deep);font-weight:700;
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;
+  transition:color .3s;
+}
+.gal__credit a:hover{color:var(--neon);}
+
+/* ============================================================
+   EVENTS
+   ============================================================ */
+.events{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;
+}
+.ev{
+  position:relative;
+  padding:clamp(1.5rem,2.5vw,2rem);
+  border-radius:var(--r-lg);
+  background:var(--panel);
+  border:1px solid var(--line-dark);
+  display:flex;flex-direction:column;gap:1rem;
+  overflow:hidden;
+  transition:transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s ease;
+  text-align: left;
+}
+.ev::after{
+  content:"";position:absolute;right:-70px;bottom:-70px;
+  width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,230,118,.15),transparent 70%);
+  opacity:0;transition:opacity .5s ease;
+}
+.ev:hover{
+  transform:translateY(-7px);
+  box-shadow:var(--shadow);
+  border-color:rgba(0,230,118,0.4);
+}
+.ev:hover::after{opacity:1;}
+.ev__yr{
+  font-family:var(--font-display);
+  font-size:.68rem;font-weight:700;letter-spacing:.18em;
+  color:var(--neon);
+}
+.ev h3{font-size:clamp(1.1rem,1.6vw,1.25rem); line-height: 1.3;}
+.ev p{font-size:.9rem; line-height: 1.7;flex:1;}
+.ev__tag{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  color:var(--neon-deep);background:rgba(0,230,118,.12);
+  border:1px solid rgba(0,230,118,.2);
+  padding:.4rem .8rem;border-radius:999px;align-self:flex-start;
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   DEPARTMENTS
+   ============================================================ */
+.depts{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.25rem;
+}
+.dept{
+  position:relative;
+  padding:clamp(1.5rem,2.4vw,2rem);
+  border-radius:var(--r-lg);
+  border:1px solid var(--line-dark);
+  background:var(--panel);
+  overflow:hidden;
+  transition:transform .5s var(--ease), border-color .5s ease, box-shadow .5s ease;
+  text-align: left;
+}
+.dept:hover{
+  transform:translateY(-6px);
+  border-color:rgba(0,230,118,.5);
+  box-shadow:var(--shadow);
+}
+.dept__mono{
+  font-family:var(--font-display);
+  font-size:2.5rem;font-weight:700;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(0, 230, 118, 0.5);
+  line-height:1;margin-bottom:1.2rem;
+  transition:-webkit-text-stroke .5s ease, color .5s ease;
+}
+.dept:hover .dept__mono{color:var(--neon);-webkit-text-stroke:1px transparent;}
+.dept h3{font-size:1.05rem;margin-bottom:.4rem;}
+.dept span{
+  display:block;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--neon-deep);font-weight:700;margin-bottom:.8rem;
+}
+.dept p{font-size:.88rem; line-height: 1.6;}
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+.cta-band{
+  position:relative;
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  padding:clamp(2.5rem,5vw,4rem);
+  background:var(--neon-gradient);
+  border:1px solid rgba(0,0,0,0.1);
+  display:grid;
+  grid-template-columns:1.3fr auto;
+  align-items:center;
+  gap:2rem;
+  isolation:isolate;
+  box-shadow:0 20px 50px -10px rgba(0,230,118,0.4);
+  text-align: left;
+}
+.cta-band::before{
+  content:"";position:absolute;
+  width:600px;height:600px;border-radius:50%;
+  right:-150px;top:-250px;
+  background:radial-gradient(circle,rgba(255,255,255,.5),transparent 70%);
+  filter:blur(60px);z-index:-1;
+}
+.cta-band h2{color:#000;font-size:clamp(1.6rem,3vw,2.4rem); line-height: 1.1;}
+.cta-band h2 .serif{color:#000;-webkit-text-fill-color:#000;}
+.cta-band p{color:rgba(0,0,0,.8);margin-top:.8rem;max-width:50ch;font-size:.95rem;font-weight:500; line-height: 1.6;}
+.cta-band__btns{display:flex;flex-wrap:wrap;gap:.75rem;}
+.cta-band .btn{background:#000;color:#fff;box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+.cta-band .btn::before{background:#1e3a29;}
+.cta-band .btn--ghost{background:transparent;color:#000;border-color:rgba(0,0,0,.3);box-shadow:none;}
+.cta-band .btn--ghost::before{background:rgba(0,0,0,.08);}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:clamp(2rem,5vw,4rem);
+  text-align: left;
+}
+.contact-grid h2{margin-top:.8rem;}
+.contact-list{display:grid;gap:0;margin-top:2rem;}
+.c-item{
+  display:flex;gap:1rem;align-items:flex-start;
+  padding:1.2rem 0;
+  border-bottom:1px solid var(--line-dark);
+}
+.c-item:first-child{border-top:1px solid var(--line-dark);}
+.c-item__ic{
+  width:42px;height:42px;flex-shrink:0;border-radius:50%;
+  background:rgba(0,230,118,.1);color:var(--neon);
+  border:1px solid rgba(0,230,118,.2);
+  display:flex;justify-content:center;align-items:center;
+}
+.c-item__ic svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.c-item b{display:block;font-size:.88rem;color:var(--text-main);font-weight:700;margin-bottom:.2rem;}
+.c-item span{font-size:.9rem;color:var(--muted);line-height:1.5;}
+
+.form-mod{
+  background:var(--panel);
+  border:1px solid var(--line-dark);
+  border-radius:var(--r-xl);
+  padding:clamp(1.8rem,3vw,2.5rem);
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  text-align: left;
+}
+.form-mod::before{
+  content:"";position:absolute;width:340px;height:340px;border-radius:50%;
+  right:-120px;top:-120px;
+  background:radial-gradient(circle,rgba(0,230,118,.1),transparent 70%);
+  filter:blur(40px);
+}
+.form-mod h3{font-size:1.3rem;margin-bottom:.4rem;}
+.form-mod > p{font-size:.88rem;margin-bottom:1.5rem;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.f-field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+.f-field label{
+  font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:700;color:var(--neon-deep);
+}
+.f-field input,.f-field select,.f-field textarea{
+  font-family:inherit;font-size:.92rem;color:var(--text-main);font-weight:500;
+  background:#f8fafc;
+  border:1px solid #cbd5e1;
+  border-radius:12px;
+  padding:.8rem 1rem;
+  width:100%;
+  transition:border-color .3s ease, background .3s ease, box-shadow .3s ease;
+}
+.f-field input::placeholder,.f-field textarea::placeholder{color:#94a3b8;}
+.f-field input:focus,.f-field select:focus,.f-field textarea:focus{
+  outline:none;border-color:var(--neon);
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(0,230,118,.2);
+}
+.f-field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300e676' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.4rem;}
+.f-field select option{background:#fff;color:#000;}
+.f-field textarea{resize:vertical;min-height:110px;}
+.f-note{font-size:.72rem;color:var(--muted);margin-top:.8rem;line-height:1.5;}
+.f-ok{
+  display:none;margin-top:1rem;padding:.8rem 1rem;border-radius:12px;
+  background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.3);
+  color:var(--neon-deep);font-size:.85rem;font-weight:600;
+}
+.f-ok.is-shown{display:block;}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{
+  background:var(--ink-2);
+  color:var(--muted);
+  padding:clamp(3rem,6vw,5rem) 0 0;
+  overflow:hidden;
+  border-top:1px solid var(--line-dark);
+  text-align: left;
+}
+.footer__top{
+  display:grid;
+  grid-template-columns:1.5fr .8fr .8fr 1.1fr;
+  gap:2.5rem;
+  padding-bottom:3rem;
+}
+.footer .brand__txt strong{color:var(--text-main);}
+.footer__desc{margin-top:1.2rem;font-size:.88rem;line-height:1.7;max-width:35ch;}
+.footer h4{
+  font-family:var(--font-sans);
+  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:700;color:var(--neon-deep);margin-bottom:1.2rem;
+}
+.footer__links{display:grid;gap:.6rem;}
+.footer__links a{font-size:.88rem;transition:color .3s ease, transform .3s ease;display:inline-block;}
+.footer__links a:hover{color:var(--neon);transform:translateX(3px);}
+.footer__links li{font-size:.88rem;line-height:1.6;}
+
+.socials{display:flex;gap:.6rem;margin-top:1.5rem;}
+.socials a{
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--line-dark);
+  display:flex;justify-content:center;align-items:center;
+  transition:all .35s ease;
+  color:var(--muted);
+}
+.socials svg{width:15px;height:15px;fill:currentColor;}
+.socials a:hover{background:var(--neon-gradient);border-color:transparent;color:#000;transform:translateY(-3px);box-shadow:var(--glow);}
+
+.footer__wordmark{
+  font-family:var(--font-display);
+  font-size:clamp(3rem,12vw,10rem);
+  font-weight:700;
+  letter-spacing:-.05em;
+  line-height:1;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(0, 230, 118, 0.25);
+  padding:1rem 0;
+  user-select:none;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.footer__bottom{
+  border-top:1px solid var(--line-dark);
+  padding:1.5rem 0 2rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+  font-size:.78rem;color:var(--muted-dark);
+}
+.footer__bottom a:hover{color:var(--neon);}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+.to-top{
+  position:fixed;right:20px;bottom:20px;z-index:90;
+  width:46px;height:46px;border-radius:50%;
+  background:#fff;color:var(--text-main);
+  border:1px solid var(--line-dark);
+  display:flex;justify-content:center;align-items:center;
+  opacity:0;visibility:hidden;transform:translateY(16px) scale(.9);
+  transition:all .4s ease;
+  box-shadow:0 10px 30px -10px rgba(0,0,0,.1);
+}
+.to-top.is-shown{opacity:1;visibility:visible;transform:none;}
+.to-top:hover{background:var(--neon-gradient);color:#000;box-shadow:var(--glow);border-color:transparent;}
+.to-top svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ============================================================
+   REVEAL & RESPONSIVE
+   ============================================================ */
+[data-rv]{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
+[data-rv].in{opacity:1;transform:none;}
+[data-rv][data-d="1"]{transition-delay:.1s;}
+[data-rv][data-d="2"]{transition-delay:.2s;}
+[data-rv][data-d="3"]{transition-delay:.3s;}
+[data-rv][data-d="4"]{transition-delay:.4s;}
+
+@media (max-width:1100px){
+  .nav{display:none;}
+  .burger{display:block;}
+  .nav-shell .btn{display:none;}
+  .depts{grid-template-columns:repeat(2,1fr);}
+  .events{grid-template-columns:1fr; gap: 1.5rem;}
+  .footer__top{grid-template-columns:1fr 1fr; gap: 2rem;}
+}
+@media (max-width:960px){
+  .hero__grid{grid-template-columns:1fr;gap:3rem; text-align: center;}
+  .hero__copy{display: flex; flex-direction: column; align-items: center;}
+  .hero__lead {text-align: center; margin-inline: auto;}
+  .hero__actions {justify-content: center;}
+  .hero__meta {justify-content: center; border-top: none;}
+  .hero__meta div {border-right: none; margin: 0 1rem; padding: 1rem 0 0 0;}
+  
+  .hero__visual{order:-1; margin-bottom: 1rem;} /* Move logo above text on mobile for immediate brand impact */
+  .hero__logo-wrap{max-width:280px;}
+  .hero__float{left:50%; transform: translateX(-50%); bottom:-30px;}
+  
+  .bento{grid-template-columns:repeat(2,1fr);}
+  .bx--photo{grid-column:span 2;grid-row:auto;min-height:340px;}
+  .bx--head{grid-column:span 2;}
+  .bx--stat{grid-column:span 1;}
+  
+  .gal{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .cta-band{grid-template-columns:1fr; text-align: center;}
+  .cta-band p {margin-inline: auto;}
+  .cta-band__btns {justify-content: center;}
+  
+  .sec-head {flex-direction: column; align-items: flex-start; gap: 1rem;}
+  .sec-head__num {padding-bottom: 0;}
+  
+  .subj{grid-template-columns:44px 1fr 40px;gap:1rem;}
+  .subj p{display:none;}
+  .subj__arrow{grid-column:3;}
+}
+@media (max-width:680px){
+  .brand__txt small{display:none;}
+  .hero__meta div{padding-right:0;margin-right:1rem;}
+  .bento{grid-template-columns:1fr;}
+  .bx--photo,.bx--head,.bx--stat{grid-column:span 1;}
+  .bx--photo{min-height:280px;}
+  .depts{grid-template-columns:1fr;}
+  .f-row{grid-template-columns:1fr;}
+  .footer__top{grid-template-columns:1fr;gap:2rem;}
+  .footer__bottom{justify-content:center;text-align:center;}
+  .hero__actions .btn{width:100%;justify-content:center;}
+  .cta-band__btns .btn{width:100%;justify-content:center;}
+  .subj{grid-template-columns:30px 1fr 34px;gap:.8rem;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+  html{scroll-behavior:auto;}
+  [data-rv]{opacity:1;transform:none;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-shell">
+    <a href="#home" class="brand" aria-label="Makhdoomia Model High School — home">
+      <span class="brand__mark">
+        <img src="https://res.cloudinary.com/dcmnrnjes/image/upload/v1793900446/Makhdoomia_Model_School_Emblem_yeobyb.png" alt="Makhdoomia Model High School Logo" />
+      </span>
+      <span class="brand__txt">
+        <strong>Makhdoomia</strong>
+        <small>Model High School · Warpora</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#academics">Academics</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#community">Community</a>
+      <a href="#faculty">Departments</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn btn--sm">
+      <span>Get in touch
+        <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </span>
+    </a>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#academics">Academics</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#faculty">Departments</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+<main>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="home">
+  <div class="orb orb--1" aria-hidden="true"></div>
+  <div class="orb orb--2" aria-hidden="true"></div>
+  <div class="orb orb--3" aria-hidden="true"></div>
+
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <div class="hero__badge" data-rv>
+        <b>MMHS</b>
+        Warpora · Dangarpora · Sopore
+      </div>
+
+      <h1 class="h-xl" data-rv data-d="1">
+        Nurturing minds in the<br />
+        <span class="serif">Warpora community.</span>
+      </h1>
+
+      <p class="hero__lead" data-rv data-d="2">
+        Makhdoomia Model High School is a community-rooted high school in Warpora,
+        Dangarpora — serving families across Sopore and Baramulla district with a
+        commitment to accessible, value-based education.
+      </p>
+
+      <div class="hero__actions" data-rv data-d="3">
+        <a href="#contact" class="btn">
+          <span>Contact the school
+            <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </span>
+        </a>
+        <a href="#gallery" class="btn btn--ghost">
+          <span>View gallery
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="hero__meta" data-rv data-d="4">
+        <div>
+          <b>Sopore</b>
+          <span>Baramulla district</span>
+        </div>
+        <div>
+          <b>Sajad Ahmad Nadvi</b>
+          <span>Chairman</span>
+        </div>
+        <div>
+          <b>North Kashmir</b>
+          <span>Jammu &amp; Kashmir</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__visual" data-rv data-d="2">
+      <div class="hero__logo-wrap">
+        <img src="https://res.cloudinary.com/dcmnrnjes/image/upload/v1793900446/Makhdoomia_Model_School_Emblem_yeobyb.png" alt="Makhdoomia Model High School Crest" />
+      </div>
+      <div class="hero__float">
+        <small>Located at</small>
+        <b>Warpora, Dangarpora</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TICKER ============================ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <div class="ticker__group">
+      <span>Makhdoomia Model High School</span><i>✦</i>
+      <span>Warpora · Dangarpora</span><i>✦</i>
+      <span>Sopore · Baramulla</span><i>✦</i>
+      <span>Jammu &amp; Kashmir</span><i>✦</i>
+      <span>Languages · Sciences · Maths</span><i>✦</i>
+      <span>Urdu · Arabic · Kashmiri</span><i>✦</i>
+    </div>
+    <div class="ticker__group">
+      <span>Makhdoomia Model High School</span><i>✦</i>
+      <span>Warpora · Dangarpora</span><i>✦</i>
+      <span>Sopore · Baramulla</span><i>✦</i>
+      <span>Jammu &amp; Kashmir</span><i>✦</i>
+      <span>Languages · Sciences · Maths</span><i>✦</i>
+      <span>Urdu · Arabic · Kashmiri</span><i>✦</i>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ ABOUT / BENTO ============================ -->
+<section class="section section--darker" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__l">
+        <span class="kicker" data-rv>About the school</span>
+        <h2 class="h-lg" data-rv data-d="1">A high school at the heart of <span class="serif">Warpora.</span></h2>
+      </div>
+      <span class="sec-head__num" data-rv data-d="2">01 — Introduction</span>
+    </div>
+
+    <div class="bento">
+      <figure class="bx bx--photo" data-rv>
+        <img
+          src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop"
+          alt="Students engaged in learning at Makhdoomia Model High School, Warpora"
+          loading="lazy"
+        />
+        <figcaption>
+          <span>Community &amp; Education</span>
+          <b>Growing together in Warpora</b>
+        </figcaption>
+      </figure>
+
+      <div class="bx bx--head" data-rv data-d="1">
+        <h2>Strengthening the academic foundation of the Dangarpora belt.</h2>
+        <p>
+          Makhdoomia Model High School sits at Warpora, Dangarpora, in Sopore — the “Apple Town
+          of Kashmir” in Baramulla district. With a history rooted in community service and
+          education, the school serves families across the surrounding area, guided by
+          Chairman Sajad Ahmad Nadvi and Principal Shabir Ahmad War.
+        </p>
+      </div>
+
+      <div class="bx bx--stat" data-rv data-d="1">
+        <b>Sopore</b>
+        <span>Baramulla district</span>
+      </div>
+      <div class="bx bx--stat" data-rv data-d="2">
+        <b>Warpora</b>
+        <span>Dangarpora</span>
+      </div>
+      <div class="bx bx--stat" data-rv data-d="3">
+        <b>MMHS</b>
+        <span>Model high school</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ACADEMICS ============================ -->
+<section class="section section--dark" id="academics">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__l">
+        <span class="kicker" data-rv>Subjects &amp; teaching</span>
+        <h2 class="h-lg" data-rv data-d="1">A broad curriculum, <span class="serif">taught with care.</span></h2>
+        <p data-rv data-d="2">The school offers a comprehensive high school curriculum, preparing students up to the 10th grade with a focus on foundational subjects and value education.</p>
+      </div>
+      <span class="sec-head__num" data-rv data-d="2">02 — Academics</span>
+    </div>
+
+    <ul class="subjects">
+      <li class="subj" data-rv>
+        <span class="subj__num">01</span>
+        <h3>Languages</h3>
+        <p>English, Urdu, Arabic and Kashmiri — reflecting the linguistic richness of the region.</p>
+        <span class="subj__arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </li>
+      <li class="subj" data-rv data-d="1">
+        <span class="subj__num">02</span>
+        <h3>Sciences</h3>
+        <p>Science taught as a core subject, building conceptual understanding and practical skills.</p>
+        <span class="subj__arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </li>
+      <li class="subj" data-rv data-d="2">
+        <span class="subj__num">03</span>
+        <h3>Mathematics</h3>
+        <p>A core subject with dedicated teaching, building numerical and analytical foundations.</p>
+        <span class="subj__arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </li>
+      <li class="subj" data-rv data-d="3">
+        <span class="subj__num">04</span>
+        <h3>Social Science</h3>
+        <p>History, civics and social science, helping students understand their community and the world.</p>
+        <span class="subj__arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </li>
+      <li class="subj" data-rv data-d="4">
+        <span class="subj__num">05</span>
+        <h3>Physical Education</h3>
+        <p>Sport and physical education, promoting health, teamwork and discipline.</p>
+        <span class="subj__arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ GALLERY ============================ -->
+<section class="section section--darker" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__l">
+        <span class="kicker" data-rv>Photo gallery</span>
+        <h2 class="h-lg" data-rv data-d="1">Life at <span class="serif">Makhdoomia.</span></h2>
+      </div>
+      <span class="sec-head__num" data-rv data-d="2">03 — Gallery</span>
+    </div>
+
+    <div class="gal">
+      <figure class="gal__fig" data-rv>
+        <img
+          src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop"
+          alt="Students and staff at Makhdoomia Model High School, Warpora"
+          loading="lazy"
+        />
+        <figcaption class="gal__cap">
+          <span>Nasha Mukt Bharat Abhiyan</span>
+          <b>CRPF Anti-Drug Awareness Drive · May 2026</b>
+        </figcaption>
+      </figure>
+
+      <div class="gal__side" data-rv data-d="1">
+        <span class="kicker">From the ground</span>
+        <h3>Students, staff and the wider community.</h3>
+        <p>
+          In May 2026, the 179th Battalion of the CRPF organised a Nasha Mukt Bharat Abhiyan
+          (Drug-Free India Campaign) at Makhdoomia Model High School, Warpora, under its Civic
+          Action Programme. Students presented a skit portraying the devastating impact of
+          substance abuse on individuals, families and society.
+        </p>
+        <p>
+          Commanding Officer Vinay Kumar Choudhary and Principal of HSS Botingoo, Athar Hussain,
+          attended as chief guests, alongside school Principal Shabir Ahmad War and General
+          Secretary Abdul Rasheed — reflecting the school's active role in community welfare.
+        </p>
+        <div class="gal__credit">
+          <strong>Photo credit:</strong> JK News Service.
+          <a href="https://jknewsservice.net/2026/05/18/179-bn-crpf-holds-anti-drug-awareness-drive-at-warpora-school-under-civic-action-programme/" target="_blank" rel="noopener">View the original report</a>.
+          More updates are available on the school's
+          <a href="https://www.facebook.com/p/Makhdoomia-Model-High-School-Warapora-61558921114697/" target="_blank" rel="noopener">Facebook page</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ COMMUNITY ============================ -->
+<section class="section section--dark" id="community">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__l">
+        <span class="kicker" data-rv>Community</span>
+        <h2 class="h-lg" data-rv data-d="1">Beyond <span class="serif">the classroom.</span></h2>
+        <p data-rv data-d="2">Makhdoomia Model High School takes part in initiatives that connect students to the wider community and promote social responsibility.</p>
+      </div>
+      <span class="sec-head__num" data-rv data-d="2">04 — Community</span>
+    </div>
+
+    <div class="events">
+      <article class="ev" data-rv>
+        <span class="ev__yr">2026</span>
+        <h3>Nasha Mukt Bharat Abhiyan &amp; CRPF Civic Action</h3>
+        <p>The 179th Battalion of the CRPF organised an anti-drug awareness drive at the school. Students performed a skit, and a felicitation ceremony honoured community contributors.</p>
+        <span class="ev__tag">Anti-drug awareness</span>
+      </article>
+
+      <article class="ev" data-rv data-d="1">
+        <span class="ev__yr">2020</span>
+        <h3>ALOHA Learning Centre Inauguration</h3>
+        <p>The school hosted the inauguration of an ALOHA Learning centre, with Chairman Sajad Ahmad Nadvi and Principal Gh. Mohd War present alongside leading citizens of the Zaingeer area.</p>
+        <span class="ev__tag">Educational partnership</span>
+      </article>
+
+      <article class="ev" data-rv data-d="2">
+        <span class="ev__yr">Ongoing</span>
+        <h3>Rooted in the Warpora community</h3>
+        <p>The school was established with the aim of promoting education and providing opportunities to children in the community, reflecting a belief that education is a fundamental right.</p>
+        <span class="ev__tag">Community standing</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DEPARTMENTS ============================ -->
+<section class="section section--panel" id="faculty">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__l">
+        <span class="kicker" data-rv>Teaching faculty</span>
+        <h2 class="h-lg" data-rv data-d="1">Departments <span class="serif">&amp; roles.</span></h2>
+        <p data-rv data-d="2">The school is supported by qualified and dedicated educators across core subject areas.</p>
+      </div>
+      <span class="sec-head__num" data-rv data-d="2">05 — Faculty</span>
+    </div>
+
+    <div class="depts">
+      <article class="dept" data-rv>
+        <div class="dept__mono">EN</div>
+        <span>M.A. English / B.Ed</span>
+        <h3>English &amp; Literature</h3>
+        <p>Building reading, writing and communication skills across every year group.</p>
+      </article>
+
+      <article class="dept" data-rv data-d="1">
+        <div class="dept__mono">SC</div>
+        <span>M.Sc + B.Ed</span>
+        <h3>Sciences</h3>
+        <p>Conceptual understanding and practical work across science disciplines.</p>
+      </article>
+
+      <article class="dept" data-rv data-d="2">
+        <div class="dept__mono">MA</div>
+        <span>M.Sc Mathematics / B.Ed</span>
+        <h3>Mathematics</h3>
+        <p>Numerical fluency and problem-solving confidence at every level.</p>
+      </article>
+
+      <article class="dept" data-rv data-d="3">
+        <div class="dept__mono">LA</div>
+        <span>Urdu · Arabic · Kashmiri</span>
+        <h3>Languages &amp; Humanities</h3>
+        <p>Mother-tongue and classical language teaching alongside social science.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA ============================ -->
+<section class="section section--dark" id="admissions">
+  <div class="wrap">
+    <div class="cta-band" data-rv>
+      <div>
+        <span class="kicker" style="color:#000;">Get in touch</span>
+        <h2 style="margin-top:.8rem;">Interested in <span class="serif">Makhdoomia?</span></h2>
+        <p>For admissions enquiries, teaching opportunities, or general information, contact the school directly. The campus is at Warpora, Dangarpora, Sopore.</p>
+      </div>
+      <div class="cta-band__btns">
+        <a href="#contact" class="btn">
+          <span>Contact the school
+            <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </span>
+        </a>
+        <a href="https://www.facebook.com/p/Makhdoomia-Model-High-School-Warapora-61558921114697/" target="_blank" rel="noopener" class="btn btn--ghost">
+          <span>Facebook page
+            <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="section section--dark" id="contact" style="padding-top:0;">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div data-rv>
+        <span class="kicker">Contact</span>
+        <h2 class="h-lg">Visit or <span class="serif">write to us.</span></h2>
+        <p style="margin-top:1rem;max-width:40ch;font-size:.95rem;">
+          Makhdoomia Model High School is located in Warpora, Dangarpora, Sopore, in Baramulla district, Jammu &amp; Kashmir.
+        </p>
+
+        <ul class="contact-list">
+          <li class="c-item">
+            <span class="c-item__ic">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <b>Campus address</b>
+              <span>Warpora, Dangarpora,<br />Sopore, Baramulla,<br />Jammu &amp; Kashmir — 193201</span>
+            </div>
+          </li>
+          <li class="c-item">
+            <span class="c-item__ic">
+              <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            </span>
+            <div>
+              <b>Phone</b>
+              <span>[Add verified phone number]</span>
+            </div>
+          </li>
+          <li class="c-item">
+            <span class="c-item__ic">
+              <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            </span>
+            <div>
+              <b>Email</b>
+              <span>[Add verified email address]</span>
+            </div>
+          </li>
+          <li class="c-item">
+            <span class="c-item__ic">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <div>
+              <b>Leadership</b>
+              <span>Chairman: Sajad Ahmad Nadvi<br />Principal: Shabir Ahmad War</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div data-rv data-d="1">
+        <form class="form-mod" id="contactForm" novalidate>
+          <h3>Send an enquiry</h3>
+          <p>We aim to respond to all enquiries promptly.</p>
+
+          <div class="f-row">
+            <div class="f-field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="f-field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="f-row">
+            <div class="f-field">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 …" />
+            </div>
+            <div class="f-field">
+              <label for="interest">I'm interested in</label>
+              <select id="interest" name="interest">
+                <option>Admissions enquiry</option>
+                <option>Teaching opportunities</option>
+                <option>General information</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="f-field">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn" style="width:100%;">
+            <span>Send enquiry
+              <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </span>
+          </button>
+          <p class="f-note">This form is a front-end demo. Connect it to an email service or form handler to go live.</p>
+          <div class="f-ok" id="formOk" role="status">Thank you — your enquiry has been received.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <a href="#home" class="brand">
+          <span class="brand__mark">
+            <img src="https://res.cloudinary.com/dcmnrnjes/image/upload/v1793900446/Makhdoomia_Model_School_Emblem_yeobyb.png" alt="Makhdoomia Model High School Logo" />
+          </span>
+          <span class="brand__txt">
+            <strong>Makhdoomia</strong>
+            <small>Model High School · Warpora</small>
+          </span>
+        </a>
+        <p class="footer__desc">
+          Makhdoomia Model High School (MMHS), Warpora, Dangarpora, Sopore, Baramulla —
+          serving the Warpora community of North Kashmir.
+        </p>
+        <div class="socials">
+          <a href="https://www.facebook.com/p/Makhdoomia-Model-High-School-Warapora-61558921114697/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4 1.3-.1 1.7-.1 4.9-.1Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Zm5.1-2.3a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer__links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#faculty">Departments</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Links</h4>
+        <ul class="footer__links">
+          <li><a href="#contact">Admissions enquiry</a></li>
+          <li><a href="#contact">Teaching opportunities</a></li>
+          <li><a href="#contact">Campus location</a></li>
+          <li><a href="https://www.facebook.com/p/Makhdoomia-Model-High-School-Warapora-61558921114697/" target="_blank" rel="noopener">Facebook page</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer__links">
+          <li>Warpora, Dangarpora,<br />Sopore, Baramulla,<br />Jammu &amp; Kashmir — 193201</li>
+          <li style="margin-top: 0.5rem;">Chairman: Sajad Ahmad Nadvi</li>
+          <li>Principal: Shabir Ahmad War</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__wordmark" aria-hidden="true">MAKHDOOMIA</div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span id="year">2025</span> Makhdoomia Model High School. All rights reserved.</span>
+      <span>
+        <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="#">Accessibility</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- sticky header ---------- */
+  var header = document.getElementById('siteHeader');
+  var toTop  = document.getElementById('toTop');
+
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle('is-scrolled', y > 20);
+    toTop.classList.toggle('is-shown', y > 700);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- mobile drawer ---------- */
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('drawer');
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', function () {
+    var open = !drawer.classList.contains('is-open');
+    drawer.classList.toggle('is-open', open);
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    drawer.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  drawer.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeDrawer();
+  });
+
+  /* ---------- scroll reveal ---------- */
+  var rv = document.querySelectorAll('[data-rv]');
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    rv.forEach(function (el) { io.observe(el); });
+  } else {
+    rv.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- back to top ---------- */
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------- contact form ---------- */
+  var form = document.getElementById('contactForm');
+  var ok   = document.getElementById('formOk');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name    = form.querySelector('#name');
+    var email   = form.querySelector('#email');
+    var message = form.querySelector('#message');
+    var valid   = true;
+
+    [name, email, message].forEach(function (f) {
+      f.style.borderColor = '';
+      if (!f.value.trim()) {
+        f.style.borderColor = '#ef4444';
+        valid = false;
+      }
+    });
+
+    if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+      email.style.borderColor = '#ef4444';
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    ok.classList.add('is-shown');
+    form.reset();
+
+    setTimeout(function () { ok.classList.remove('is-shown'); }, 6000);
+  });
+
+  /* ---------- year ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
